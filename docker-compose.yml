@@ -1,0 +1,25 @@
+version: '3'
+services:
+  cscart-mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: cscart
+      MYSQL_USER: cscart
+      MYSQL_PASSWORD: password
+    networks:
+      - cscart
+  cscart:
+    image: gcr.io/aftership-demo-1001/cscart:latest
+    restart: always
+    command: apache2-foreground
+    ports:
+      - "8088:80"
+    networks:
+      - cscart
+
+networks:
+  cscart:
+    driver: bridge
+
