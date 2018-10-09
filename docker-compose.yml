@@ -11,7 +11,7 @@ services:
     networks:
       - cscart
   cscart:
-    image: gcr.io/aftership-demo-1001/cscart:latest
+    image: eric4545/docker-cscart:latest
     restart: always
     command: apache2-foreground
     ports:
