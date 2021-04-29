@@ -1,0 +1,14 @@
+version: 2
+updates:
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "07:00"
+    timezone: Asia/Hong_Kong
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: php
+    versions:
+    - 8.0.1.pre.apache
+    - 8.0.2.pre.apache
